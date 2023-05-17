@@ -9,7 +9,8 @@ from pydub import AudioSegment
 
 def convert_aif_to_mp3(aif_file):
     mp3_file = aif_file[:-4] + '.mp3'
-    AudioSegment.from_file(aif_file).export(mp3_file, format='mp3')
+    print(f"Converting {aif_file} to {mp3_file}")
+    AudioSegment.from_file(aif_file).export(mp3_file, format='mp3', bitrate='320k')
 
 def convert_directory(directory):
     os.chdir(directory)
